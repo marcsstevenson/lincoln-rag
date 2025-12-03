@@ -18,3 +18,6 @@
    ```bash
    pip install -r requirements.txt
    ```
+4. **Set up environment variables**:
+
+   Create a `.env` file in the root directory and set GOOGLE_API_KEY
