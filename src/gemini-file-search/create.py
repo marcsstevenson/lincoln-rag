@@ -4,11 +4,12 @@ import time
 import os
 import re
 import mimetypes
-from constants import store_name
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
+
+store_name = os.getenv('STORE_NAME')
 
 client = genai.Client()
 

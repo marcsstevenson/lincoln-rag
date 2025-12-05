@@ -4,11 +4,13 @@ import time
 import os
 import re
 import mimetypes
-from constants import store_name
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
+
+store_name = os.getenv('STORE_NAME')
+target_upload_dir = os.getenv('TARGET_UPLOAD_DIR')
 
 def sanitize_resource_name(filename):
     """
@@ -32,10 +34,7 @@ def sanitize_resource_name(filename):
     name = name.rstrip('-')
     return name
 
-print("GOOGLE_API_KEY:", os.environ['GOOGLE_API_KEY'])
-
 client = genai.Client()
-target_upload_dir = "C:/Temp/lincoln_rag_uploads"
 
 # File name will be visible in citations
 # file_search_store = client.file_search_stores.create(config={'display_name': 'lincoln_rag'})

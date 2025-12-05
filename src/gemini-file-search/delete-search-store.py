@@ -1,11 +1,12 @@
 from google import genai
 from google.genai import types
 import os
-from constants import store_name
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
+
+store_name = os.getenv('STORE_NAME')
 
 client = genai.Client()
 
